@@ -43,6 +43,8 @@ To simulate it, we will mock the following behaviour:
 8. Wait for the first aid procedure to complete (see `src/remote_aid_worker/worker.js` and `src/physical_aid_worker/worker.js` for delay mocks)
 9. See the log for `first_aid_worker` to notice the single completion event: `aws logs tail /aws/lambda/first_aid_worker --filter-pattern "ending the procedure..."` (or without `--filter-pattern` to see all latest events).
 
+---
+
 ## Code Flow
 
 ![code flow](./codeflow.png)
