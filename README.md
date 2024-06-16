@@ -43,14 +43,6 @@ To simulate it, we will mock the following behaviour:
 8. Wait for the first aid procedure to complete (see `src/remote_aid_worker/worker.js` and `src/physical_aid_worker/worker.js` for delay mocks)
 9. See the log for `first_aid_worker` to notice the single completion event: `aws logs tail /aws/lambda/first_aid_worker --filter-pattern "ending the procedure..."` (or without `--filter-pattern` to see all latest events).
 
-### Output
-
-Following the "Getting Started" section above, we get the following output, indeed containing only one instance of completion log event:
-
-```bash
-[***@*** project]$ aws logs tail /aws/lambda/first_aid_worker --filter-pattern "ending the procedure..."
-2023-01-03T21:04:19.247000+00:00 2023/01/03/[$LATEST]6efc86c3a5414851bd654236b3da78b1 2023-01-03T21:04:19.247Z  e3bfcb9d-962e-4502-a41f-2fa469b6c4c2      INFO    Emergency team arrived. ending the procedure...
-[***@*** project]$
-```
+## Code Flow
 
 ![code flow](./codeflow.png)
